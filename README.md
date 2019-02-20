@@ -22,8 +22,13 @@ desenho abaixo:
 
 ![Ilustração](mazebfs/image/ilustracao.png)
 
+<<<<<<< HEAD
 Um labirinto desses pode ser representado por uma matriz retangular `L`,
 cujo elemento `lij` vale 0 ou −1 conforme a casa correspondente do labirinto
+=======
+Um labirinto desses pode ser representado por uma matriz retangular \begin{aligned},
+cujo elemento �#$ vale 0 ou −1 conforme a casa correspondente do labirinto
+>>>>>>> b4d2cc174b16d336fce52aabd92e3695c8a5a251
 seja uma passagem livre ou uma parede, respectivamente.
 O labirinto (de tamanho `m x n`) deve ser criado dinamicamente por meio
 da leitura de um arquivo texto. O arquivo deve conter exatamente `m` linhas por
