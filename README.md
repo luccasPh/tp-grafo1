@@ -22,7 +22,7 @@ desenho abaixo:
 
 ![Ilustração](mazebfs/image/ilustracao.png)
 
-Um labirinto desses pode ser representado por uma matriz retangular https://latex.codecogs.com/gif.latex?L,
+Um labirinto desses pode ser representado por uma matriz retangular \begin{aligned},
 cujo elemento �#$ vale 0 ou −1 conforme a casa correspondente do labirinto
 seja uma passagem livre ou uma parede, respectivamente.
 O labirinto (de tamanho � � �) deve ser criado dinamicamente por meio
