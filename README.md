@@ -20,14 +20,14 @@ Prof. Marvin Lemos<br>
 Ajude um rato a encontrar um pedaço de queijo num labirinto como o do
 desenho abaixo:
 
-![Ilustração](mazebfs/image/ilustracao.png)
+![](mazebfs/image/ilustracao.png)
 
-Um labirinto desses pode ser representado por uma matriz retangular `L`,
-cujo elemento ![matriz elementos](mazebfs/image/math1.png) vale 0 ou −1 conforme a casa correspondente do labirinto
+Um labirinto desses pode ser representado por uma matriz retangular ![](mazebfs/image/math2.png),
+cujo elemento ![](mazebfs/image/math1.png) vale 0 ou −1 conforme a casa correspondente do labirinto
 seja uma passagem livre ou uma parede, respectivamente.
-O labirinto (de tamanho `m x n`) deve ser criado dinamicamente por meio
-da leitura de um arquivo texto. O arquivo deve conter exatamente `m` linhas por
-`n` colunas de números inteiros, com valor 0 ou −1 para indicar espaço livre ou
+O labirinto (de tamanho ![](mazebfs/image/math3.png)) deve ser criado dinamicamente por meio
+da leitura de um arquivo texto. O arquivo deve conter exatamente ![](mazebfs/image/math4.png) linhas por
+![](mazebfs/image/math5.png) colunas de números inteiros, com valor 0 ou −1 para indicar espaço livre ou
 não (respectivamente) no labirinto.
 O objetivo do trabalho é desenvolver um programa, baseado na Busca
 em Largura, para, a partir de um ponto inicial, encontrar o menor caminho que
