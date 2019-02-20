@@ -2,8 +2,8 @@
 <dl>
 <p><strong>
 UNIVERSIDADE ESTADUAL DO PÍAUI<br>
-CIENCIA DA COMPUTAÇÃO<br>
 CENTRO DE TECNOLOGIA E URBANISMO<br>
+CIENCIA DA COMPUTAÇÃO<br>
 Prof. Marvin Lemos<br>
 
 <p>2018-2</p>
