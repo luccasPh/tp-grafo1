@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
-from config import Config
+from mazebfs.config import Config
 import os
 
 try:
@@ -26,7 +26,6 @@ except AttributeError:
 
 class Menu(object):
     def setupUi(self, Form):
-        print(os.path.join(os.path.dirname(__file__)))
         Form.setObjectName(_fromUtf8("Jerry and the Cheeses"))
         Form.resize(730, 389)
         self.config = None

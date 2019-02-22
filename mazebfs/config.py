@@ -1,5 +1,5 @@
 from PyQt4 import QtGui, QtCore
-from result import Result
+from mazebfs.result import Result
 import os, sys, time
 
 try:
@@ -14,6 +14,7 @@ class Config(QtGui.QWidget):
     def __init__(self, num):
         super(Config, self).__init__()
 
+        #abre um arquivo texto com os layouts
         with open(os.path.join(os.path.dirname(__file__),'layout/layout{}.txt'.format(num)),'r') as l:
             layout = l.readlines()
             alt = int(layout[0].split(' ')[0])
@@ -24,7 +25,9 @@ class Config(QtGui.QWidget):
             for i in range(1,len(layout)):
                 lab.append([int(n) for n in layout[i].split(' ')])
 
+        #configura o caminha das image
         self.image = os.path.join(os.path.dirname(__file__), 'image')
+
         self.rato = [999, 999, False]
         self.queijo = (999, 999, False)
         self.lab = (alt, lar, lab, tipo)
@@ -100,18 +103,21 @@ class Config(QtGui.QWidget):
 
         self.show()
     
+    #botão do rato
     def press_button_rato(self):
         self.pushButton.setStyleSheet("background-color: red;")
         self.button_rato = True
         self.pushButton2.setStyleSheet("background-color: rgb(0, 170, 0);")
         self.button_queijo = False
     
+    #botão do queijo
     def press_button_queijo(self):
         self.pushButton.setStyleSheet("background-color: rgb(0, 170, 0);")
         self.button_rato = False
         self.pushButton2.setStyleSheet("background-color: red;")
         self.button_queijo = True
     
+    #botão do start
     def press_button_start(self):
         if self.rato[2] and self.queijo[2]:
             self.close()
@@ -124,6 +130,7 @@ class Config(QtGui.QWidget):
             msg.exec_()
     
     
+    #função que atualiza o mapa com novas configuraçoes
     def paintEvent(self, event):
         qp = QtGui.QPainter()
         qp.begin(self)
@@ -136,6 +143,7 @@ class Config(QtGui.QWidget):
 
         qp.drawPixmap(self.rato[0]*45, self.rato[1]*(48 + self.r_z), QtGui.QPixmap(os.path.join(self.image, 'player.png')))
     
+    #função para captura o clik do mouse
     def mousePressEvent(self, event):
         x = event.x() // 45
         y = event.y() // 49

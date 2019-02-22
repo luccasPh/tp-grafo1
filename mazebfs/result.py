@@ -1,15 +1,19 @@
 from PyQt4 import QtGui, QtCore
-from busca import BFS
+from mazebfs.busca import BFS
 import os, sys, time
 
 class Result(QtGui.QWidget):
     def __init__(self, rato, queijo, lab):
         super(Result, self).__init__()
+
+        #configura o caminho das imagems
         self.image = os.path.join(os.path.dirname(__file__), 'image')
         self.timer = QtCore.QBasicTimer()
         self.rato = rato
         self.queijo = queijo
         self.lab = lab
+
+        #chamada do algoritimo da busca em profundidade
         self.solu = iter(BFS(self.lab, self.rato, self.queijo).buscar())
         self.fim = False
         self.r_z = 0
@@ -31,6 +35,7 @@ class Result(QtGui.QWidget):
         self.timer.start(300, self)
         self.update()
     
+    #função que atualizar o mapa com novas informaçoes
     def paintEvent(self, event):
         qp = QtGui.QPainter()
         qp.begin(self)
@@ -45,6 +50,7 @@ class Result(QtGui.QWidget):
         
         qp.drawPixmap(self.rato[0]*45, self.rato[1]*(48 + self.r_z), QtGui.QPixmap(os.path.join(self.image, 'player.png')))
 
+    #função que altera as cordenadas do ratinho no mapa e depois atualizara
     def timerEvent(self, event):
         try:
             cord = next(self.solu)
