@@ -1,16 +1,16 @@
 
 <dl>
 <p><strong>
-UNIVERSIDADE ESTADUAL DO PÍAUI<br>
+UUNIVERSIDADE ESTADUAL DO PIAUÍ<br>
 CENTRO DE TECNOLOGIA E URBANISMO<br>
-CIENCIA DA COMPUTAÇÃO<br>
-Prof. Marvin Lemos<br>
+CIÊNCIA DA COMPUTAÇÃO<br>
 
 <p>2018-2</p>
 </strong></p>
 </dl>
 
-### TRABALHO I – BUSCA EM LARGURA
+### TTRABALHO PRATICO I – BUSCA EM LARGURA
+
 **por Lucas Pinheiro de Oliveira**
 
 ---
