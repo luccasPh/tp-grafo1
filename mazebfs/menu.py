@@ -115,7 +115,7 @@ class Menu(object):
         self.groupBox_4.setTitle(_translate("Form", "LABIRINTO 4", None))
         self.pushButton_4.setText(_translate("Form", "SELECT", None))
 
-
+"""
 if __name__ == "__main__":
     import sys
     app = QtGui.QApplication(sys.argv)
@@ -124,4 +124,5 @@ if __name__ == "__main__":
     ui.setupUi(Form)
     Form.show()
     sys.exit(app.exec_())
+"""
 

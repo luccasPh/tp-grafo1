@@ -1,5 +1,6 @@
 from PyQt4 import QtGui, QtCore
 from mazebfs.busca import BFS
+from mazebfs.fim import Fim
 import os, sys, time
 
 class Result(QtGui.QWidget):
@@ -12,6 +13,7 @@ class Result(QtGui.QWidget):
         self.rato = rato
         self.queijo = queijo
         self.lab = lab
+        self.fim = None
 
         #chamada do algoritimo da busca em profundidade
         self.solu = iter(BFS(self.lab, self.rato, self.queijo).buscar())
@@ -59,6 +61,7 @@ class Result(QtGui.QWidget):
 
         except:
             self.timer.stop()
+            self.fim = Fim(self, self.lab[4])
         
         self.repaint()
         

@@ -30,7 +30,7 @@ class Config(QtGui.QWidget):
 
         self.rato = [999, 999, False]
         self.queijo = (999, 999, False)
-        self.lab = (alt, lar, lab, tipo)
+        self.lab = (alt, lar, lab, tipo, num)
         self.r_x = 0
         self.r_y = 0
         self.r_z = 0
