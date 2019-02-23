@@ -67,7 +67,9 @@ class Result(QtGui.QWidget):
         
 
         
+"""
 if __name__ == '__main__':
 	app = QtGui.QApplication(sys.argv)
 	re = Result()	
 	sys.exit(app.exec_())
+"""
