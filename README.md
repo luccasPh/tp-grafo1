@@ -7,8 +7,6 @@ CIÊNCIA DA COMPUTAÇÃO<br>
 TEORIA DOS GRAFOS<br>
 Prof. Marcus Vinicius<br>
 
-2018-2
-
 <p>2018-2</p>
 </strong></p>
 </dl>
