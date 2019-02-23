@@ -11,7 +11,7 @@ Prof. Marcus Vinicius<br>
 </strong></p>
 </dl>
 
-### TTRABALHO PRATICO I – BUSCA EM LARGURA
+### TRABALHO PRATICO I – BUSCA EM LARGURA
 
 **por Lucas Pinheiro de Oliveira**
 
