@@ -1,11 +1,11 @@
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtWidgets, QtCore, QtGui
 from mazebfs.menu import Menu
 import sys
 
 
 def main():
-    app = QtGui.QApplication(sys.argv)
-    Form = QtGui.QWidget()
+    app = QtWidgets.QApplication(sys.argv)
+    Form = QtWidgets.QWidget()
     ui = Menu()
     ui.setupUi(Form)
     Form.show()

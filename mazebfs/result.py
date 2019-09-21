@@ -1,9 +1,9 @@
-from PyQt4 import QtGui, QtCore
+from PyQt5 import QtWidgets,QtGui, QtCore
 from mazebfs.busca import BFS
 from mazebfs.fim import Fim
 import os, sys, time
 
-class Result(QtGui.QWidget):
+class Result(QtWidgets.QWidget):
     def __init__(self, rato, queijo, lab):
         super(Result, self).__init__()
 
@@ -61,7 +61,8 @@ class Result(QtGui.QWidget):
 
         except:
             self.timer.stop()
-            self.fim = Fim(self, self.lab[4])
+            self.fim = Fim(self.lab[4])
+            self.close()
         
         self.repaint()
         

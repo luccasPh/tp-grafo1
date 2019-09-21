@@ -6,7 +6,7 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtWidgets, QtCore, QtGui
 import os
 
 
@@ -17,18 +17,17 @@ except AttributeError:
         return s
 
 try:
-    _encoding = QtGui.QApplication.UnicodeUTF8
+    _encoding = QtWidgets.QApplication.UnicodeUTF8
     def _translate(context, text, disambig):
-        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+        return QtWidgets.QApplication.translate(context, text, disambig, _encoding)
 except AttributeError:
     def _translate(context, text, disambig):
-        return QtGui.QApplication.translate(context, text, disambig)
+        return QtWidgets.QApplication.translate(context, text, disambig)
 
-class Fim(QtGui.QWidget):
-    def __init__(self, other, num):
+class Fim(QtWidgets.QWidget):
+    def __init__(self, num):
         super(Fim, self).__init__()
         self.num = num
-        self.other = other
         self.config = None
         self.setupUi()
         self.show()
@@ -37,7 +36,7 @@ class Fim(QtGui.QWidget):
         image = os.path.join(os.path.dirname(__file__), 'image')
         self.setObjectName(_fromUtf8("Form"))
         self.resize(350, 290)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.sizePolicy().hasHeightForWidth())
@@ -45,7 +44,7 @@ class Fim(QtGui.QWidget):
         self.setMinimumSize(QtCore.QSize(350, 290))
         self.setMaximumSize(QtCore.QSize(350, 290))
 
-        self.label = QtGui.QLabel(self)
+        self.label = QtWidgets.QLabel(self)
         movie = QtGui.QMovie(os.path.join(image, 'fim.gif'))
         self.label.setGeometry(QtCore.QRect(10, 40, 331, 201))
         #self.label.setText(_fromUtf8(""))
@@ -53,17 +52,17 @@ class Fim(QtGui.QWidget):
         movie.start()
         self.label.setObjectName(_fromUtf8("label"))
 
-        self.pushButton = QtGui.QPushButton(self)
+        self.pushButton = QtWidgets.QPushButton(self)
         self.pushButton.setGeometry(QtCore.QRect(10, 250, 88, 29))
         self.pushButton.setObjectName(_fromUtf8("pushButton"))
         self.pushButton.clicked.connect(self.press_button_menu)
 
-        self.pushButton_2 = QtGui.QPushButton(self)
+        self.pushButton_2 = QtWidgets.QPushButton(self)
         self.pushButton_2.setGeometry(QtCore.QRect(250, 250, 88, 29))
         self.pushButton_2.setObjectName(_fromUtf8("pushButton_2"))
         self.pushButton_2.clicked.connect(self.press_button_config)
 
-        self.label_2 = QtGui.QLabel(self)
+        self.label_2 = QtWidgets.QLabel(self)
         self.label_2.setGeometry(QtCore.QRect(150, 10, 51, 21))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Serif"))
@@ -79,7 +78,7 @@ class Fim(QtGui.QWidget):
     def press_button_menu(self):
         self.close()
         from mazebfs.menu import Menu
-        self.tela = QtGui.QWidget()
+        self.tela = QtWidgets.QWidget()
         self.menu = Menu()
         self.menu.setupUi(self.tela)
         self.tela.show()
@@ -91,7 +90,6 @@ class Fim(QtGui.QWidget):
 
     
     def closeEvent(self, event):
-        self.other.close()
         event.accept()
 
     def retranslateUi(self):
@@ -103,7 +101,7 @@ class Fim(QtGui.QWidget):
 """
 if __name__ == "__main__":
     import sys
-    app = QtGui.QApplication(sys.argv)
+    app = QtWidgets.QApplication(sys.argv)
     Form = QtGui.QWidget()
     ui = Fim()
     ui.setupUi(Form)

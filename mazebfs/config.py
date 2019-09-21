@@ -1,16 +1,16 @@
-from PyQt4 import QtGui, QtCore
+from PyQt5 import QtWidgets, QtGui, QtCore
 from mazebfs.result import Result
 import os, sys, time
 
 try:
-    _encoding = QtGui.QApplication.UnicodeUTF8
+    _encoding = QtWidgets.QApplication.UnicodeUTF8
     def _translate(context, text, disambig):
-        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+        return QtWidgets.QApplication.translate(context, text, disambig, _encoding)
 except AttributeError:
     def _translate(context, text, disambig):
-        return QtGui.QApplication.translate(context, text, disambig)
+        return QtWidgets.QApplication.translate(context, text, disambig)
 
-class Config(QtGui.QWidget):
+class Config(QtWidgets.QWidget):
     def __init__(self, num):
         super(Config, self).__init__()
 
@@ -51,7 +51,7 @@ class Config(QtGui.QWidget):
         self.setStyleSheet("QWidget { background: #32CD32 }") 
         self.setFixedSize(self.lab[1]*(55 + self.r_x), self.lab[0]*49)
         self.setWindowTitle('Jerry and the Cheeses')
-        self.pushButton = QtGui.QPushButton(self)
+        self.pushButton = QtWidgets.QPushButton(self)
         self.pushButton.setGeometry(QtCore.QRect(self.lab[1]*46, self.lab[0]*1, 42, 54))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(os.path.join(self.image,'player.png')), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -61,7 +61,7 @@ class Config(QtGui.QWidget):
         self.pushButton.setStyleSheet("background-color: rgb(0, 170, 0);")
         self.pushButton.clicked.connect(self.press_button_rato)
 
-        self.pushButton2 = QtGui.QPushButton(self)
+        self.pushButton2 = QtWidgets.QPushButton(self)
         self.pushButton2.setGeometry(QtCore.QRect(self.lab[1]*(50 + self.r_y), self.lab[0]*1, 50, 54))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(os.path.join(self.image,'chase.png')), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -71,7 +71,7 @@ class Config(QtGui.QWidget):
         self.pushButton2.setStyleSheet("background-color: rgb(0, 170, 0);")
         self.pushButton2.clicked.connect(self.press_button_queijo)
 
-        self.pushButton3 = QtGui.QPushButton(self)
+        self.pushButton3 = QtWidgets.QPushButton(self)
         self.pushButton3.setGeometry(QtCore.QRect(self.lab[1]*46, self.lab[0]*43, 91, 41))
         font = QtGui.QFont()
         font.setFamily("Serif")
@@ -85,7 +85,7 @@ class Config(QtGui.QWidget):
         self.pushButton3.clicked.connect(self.press_button_start)
 
 
-        self.label = QtGui.QLabel(self)
+        self.label = QtWidgets.QLabel(self)
         self.label.setGeometry(QtCore.QRect(self.lab[1]*46, self.lab[0]*10, 111, 191))
         font = QtGui.QFont()
         font.setFamily("Serif")
@@ -123,8 +123,8 @@ class Config(QtGui.QWidget):
             self.close()
             self.result = Result(self.rato, self.queijo, self.lab)
         else:
-            msg = QtGui.QMessageBox(self)
-            msg.setIcon(QtGui.QMessageBox.Information)
+            msg = QtWidgets.QMessageBox(self)
+            msg.setIcon(QtWidgets.QMessageBox.Information)
             msg.setText("Por favor selecione a posição do rato e do qeijo!")
             msg.setStyleSheet('background-color: white;')
             msg.exec_()
@@ -167,7 +167,7 @@ class Config(QtGui.QWidget):
 
 """        
 if __name__ == '__main__':
-	app = QtGui.QApplication(sys.argv)
+	app = QtWidgets.QApplication(sys.argv)
 	re = Select()	
 	sys.exit(app.exec_())
 """
