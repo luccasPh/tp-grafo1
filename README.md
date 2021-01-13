@@ -56,15 +56,21 @@ No casso desta aplicação foi utilizado Python com PyQt4
 ### 4. COMO RODA ESTA APLICAÇÃO
 
 ```sh
-    # Instale o gerenciado de pacote poetry
-    $ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
-    
-    # Clone o repositorio
+    # Clone o repositório
     $ git clone https://github.com/luccasPh/tp-grafo1.git && cd tp-grafo1
-    
+
+    # Instale o virtualenv
+    $ pip install virtualenv
+
+    # Crie uma nova virtualenv
+    $ virtualenv nome_da_virtualenv
+
+    # Ative a nova virtualenv
+    $ source nome_da_virtualenv/bin/activate
+
     # Instale as dependência
-    $ poetry install
+    $ pip install -r requirements.txt
 
     # executar a aplicação
-    $ poetry shell && python main.py
+    $ python main.py
 ```
