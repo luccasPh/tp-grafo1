@@ -58,7 +58,10 @@ No casso desta aplicação foi utilizado Python com PyQt4
 ```sh
     # Instale o gerenciado de pacote poetry
     $ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
-
+    
+    # Clone o repositorio
+    $ git clone https://github.com/luccasPh/tp-grafo1.git && cd tp-grafo1
+    
     # Instale as dependência
     $ poetry install
 
