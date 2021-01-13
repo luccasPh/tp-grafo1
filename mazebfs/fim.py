@@ -13,16 +13,23 @@ import os
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
+
     def _fromUtf8(s):
         return s
 
+
 try:
     _encoding = QtWidgets.QApplication.UnicodeUTF8
+
     def _translate(context, text, disambig):
         return QtWidgets.QApplication.translate(context, text, disambig, _encoding)
+
+
 except AttributeError:
+
     def _translate(context, text, disambig):
         return QtWidgets.QApplication.translate(context, text, disambig)
+
 
 class Fim(QtWidgets.QWidget):
     def __init__(self, num):
@@ -33,10 +40,12 @@ class Fim(QtWidgets.QWidget):
         self.show()
 
     def setupUi(self):
-        image = os.path.join(os.path.dirname(__file__), 'image')
+        image = os.path.join(os.path.dirname(__file__), "image")
         self.setObjectName(_fromUtf8("Form"))
         self.resize(350, 290)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.sizePolicy().hasHeightForWidth())
@@ -45,9 +54,9 @@ class Fim(QtWidgets.QWidget):
         self.setMaximumSize(QtCore.QSize(350, 290))
 
         self.label = QtWidgets.QLabel(self)
-        movie = QtGui.QMovie(os.path.join(image, 'fim.gif'))
+        movie = QtGui.QMovie(os.path.join(image, "fim.gif"))
         self.label.setGeometry(QtCore.QRect(10, 40, 331, 201))
-        #self.label.setText(_fromUtf8(""))
+        # self.label.setText(_fromUtf8(""))
         self.label.setMovie(movie)
         movie.start()
         self.label.setObjectName(_fromUtf8("label"))
@@ -74,21 +83,22 @@ class Fim(QtWidgets.QWidget):
 
         self.retranslateUi()
         QtCore.QMetaObject.connectSlotsByName(self)
-    
+
     def press_button_menu(self):
         self.close()
         from mazebfs.menu import Menu
+
         self.tela = QtWidgets.QWidget()
         self.menu = Menu()
         self.menu.setupUi(self.tela)
         self.tela.show()
-    
+
     def press_button_config(self):
         self.close()
         from mazebfs.config import Config
+
         self.config = Config(self.num)
 
-    
     def closeEvent(self, event):
         event.accept()
 
@@ -96,16 +106,10 @@ class Fim(QtWidgets.QWidget):
         self.setWindowTitle(_translate("Form", "Form", None))
         self.pushButton.setText(_translate("Form", "Menu", None))
         self.pushButton_2.setText(_translate("Form", "Configura", None))
-        self.label_2.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:14pt; color:#000000;\">FIM</span></p></body></html>", None))
-
-"""
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Form = QtGui.QWidget()
-    ui = Fim()
-    ui.setupUi(Form)
-    Form.show()
-    sys.exit(app.exec_())
-"""
-
+        self.label_2.setText(
+            _translate(
+                "Form",
+                '<html><head/><body><p><span style=" font-size:14pt; color:#000000;">FIM</span></p></body></html>',
+                None,
+            )
+        )

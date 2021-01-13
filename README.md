@@ -1,4 +1,3 @@
-
 <dl>
 <p><strong>
 UNIVERSIDADE ESTADUAL DO PIAUÍ<br>
@@ -37,19 +36,32 @@ o rato deve seguir até alcançar o queijo.
 
 ### 2. FUNCIONALIDADES
 
-* a. O programa deve permitir que o usuário possa carregar um novo
-arquivo de configuração de labirinto antes de executar a busca;
+- a. O programa deve permitir que o usuário possa carregar um novo
+  arquivo de configuração de labirinto antes de executar a busca;
 
-* b. O programa deve solicitar a definição da posição inicial do rato, bem
-como da localização do queijo.
+- b. O programa deve solicitar a definição da posição inicial do rato, bem
+  como da localização do queijo.
 
 ### 3. REQUISITOS NÃO FUNCIONAIS
 
-* a. Além da implementação do algoritmo de busca, o programa deverá
-conter um módulo de interface com o usuário, para exibir uma
-animação correspondente à solução encontrada. Existem boas
-bibliotecas disponíveis para a maioria das linguagens, como a
-PyGame (Python), Allegro (C/C++), JMonkeyEngine (Java), Unity
-(C#), dentre outros.
+- a. Além da implementação do algoritmo de busca, o programa deverá
+  conter um módulo de interface com o usuário, para exibir uma
+  animação correspondente à solução encontrada. Existem boas
+  bibliotecas disponíveis para a maioria das linguagens, como a
+  PyGame (Python), Allegro (C/C++), JMonkeyEngine (Java), Unity
+  (C#), dentre outros.
 
 No casso desta aplicação foi utilizado Python com PyQt4
+
+### 4. COMO RODA ESTA APLICAÇÃO
+
+```sh
+    # Instale o gerenciado de pacote poetry
+    $ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+
+    # Instale as dependência
+    $ poetry install
+
+    # executar a aplicação
+    $ poetry shell && python main.py
+```
